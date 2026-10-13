@@ -39,19 +39,19 @@ export default function Login() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center bg-[#0f172a]">
-      <div className="bg-[#1e293b] p-8 rounded-xl w-80 text-white">
-        <h2 className="text-2xl mb-6 text-center font-bold text-green-400">🎓 LMS Login</h2>
+    <div className="h-screen flex items-center justify-center bg-white">
+      <div className="bg-white border border-gray-200 shadow-lg p-8 rounded-xl w-80 text-gray-900">
+        <h2 className="text-2xl mb-6 text-center font-bold text-green-700">🎓 LMS Login</h2>
 
         {/* Error banner */}
         {error && (
-          <div className="bg-red-500/20 border border-red-500 text-red-300 text-sm px-3 py-2 rounded mb-4">
+          <div className="bg-red-50 border border-red-300 text-red-700 text-sm px-3 py-2 rounded mb-4">
             {error}
           </div>
         )}
 
         <select
-          className="w-full p-2 mb-3 bg-gray-800 rounded"
+          className="w-full p-2 mb-3 bg-white border border-gray-300 rounded placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-green-700"
           onChange={(e) => setRole(e.target.value)}
         >
           <option value="student">Student</option>
@@ -60,13 +60,13 @@ export default function Login() {
         </select>
 
         <input
-          className="w-full p-2 mb-3 bg-gray-800 rounded"
+          className="w-full p-2 mb-3 bg-white border border-gray-300 rounded placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-green-700"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
-          className="w-full p-2 mb-4 bg-gray-800 rounded"
+          className="w-full p-2 mb-4 bg-white border border-gray-300 rounded placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-green-700"
           type="password"
           placeholder="Password"
           onKeyDown={(e) => e.key === "Enter" && handleLogin()}
@@ -76,14 +76,14 @@ export default function Login() {
         <button
           onClick={handleLogin}
           disabled={loading}
-          className="w-full bg-green-500 p-2 rounded hover:bg-green-600 disabled:opacity-50"
+          className="w-full bg-green-700 text-white p-2 rounded hover:bg-green-800 disabled:opacity-50"
         >
           {loading ? "Logging in..." : "Login"}
         </button>
 
         <p
           onClick={() => navigate("/register")}
-          className="text-sm text-gray-400 mt-4 text-center cursor-pointer hover:text-white"
+          className="text-sm text-gray-600 mt-4 text-center cursor-pointer hover:text-green-700"
         >
           Don't have an account? Register
         </p>
